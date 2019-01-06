@@ -1,6 +1,8 @@
 #ifndef PLATEAU_H
 #define PLATEAU_H
 
+#include <cstdlib>
+#include <ctime>
 #include <QObject>
 #include "pixel.h"
 #include "variables_global_types.h"

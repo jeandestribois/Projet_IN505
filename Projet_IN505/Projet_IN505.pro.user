@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.8.0, 2018-12-29T01:22:36. -->
+<!-- Written by QtCreator 4.8.0, 2019-01-06T19:11:09. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -294,8 +294,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Projet_IN505</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/jean/Desktop/Informatique/L3/Projet_IN505/Projet_IN505.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Projet_IN5052</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/jean/Desktop/Informatique/L3/Projet_IN505/Projet_IN505/Projet_IN505.pro</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Projet_IN505.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>

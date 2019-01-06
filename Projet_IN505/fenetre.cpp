@@ -4,8 +4,8 @@ Fenetre::Fenetre() : QWidget()
 {
     setFocusPolicy(Qt::StrongFocus);
     setFixedSize(LARGEUR_FEN, HAUTEUR_FEN);
-    pixelOrigineX=0;
-    pixelOrigineY=0;
+    pixelOrigineX=plateau.getXJoueur();
+    pixelOrigineY=plateau.getYJoueur();
 }
 
 void Fenetre::paintEvent(QPaintEvent *)
@@ -20,11 +20,15 @@ void Fenetre::paintEvent(QPaintEvent *)
             p.drawRect((i-pixelOrigineX)*COTE_PIX, (j-pixelOrigineY)*COTE_PIX, COTE_PIX, COTE_PIX);
             if (plateau.getPixel(i,j)->getElement()->getType() == _ARBRE)
             {
-                p.drawImage((i-pixelOrigineX)*COTE_PIX, (j-pixelOrigineY)*COTE_PIX, QImage("../../../../Projet_IN505/images/tree.png"));
+                p.drawImage((i-pixelOrigineX)*COTE_PIX, (j-pixelOrigineY)*COTE_PIX, QImage("../../../../Projet_IN505/images/arbre.png"));
             }
             else if(plateau.getPixel(i,j)->getElement()->getType() == _JOUEUR)
             {
-                p.drawImage((i-pixelOrigineX)*COTE_PIX, (j-pixelOrigineY)*COTE_PIX, QImage("../../../../Projet_IN505/images/joueur.png"));
+                p.drawImage((i-pixelOrigineX)*COTE_PIX, (j-pixelOrigineY)*COTE_PIX, QImage("../../../../Projet_IN505/images/joueur1.png"));
+            }
+            else if(plateau.getPixel(i,j)->getElement()->getType() == _ROCHER)
+            {
+                p.drawImage((i-pixelOrigineX)*COTE_PIX, (j-pixelOrigineY)*COTE_PIX, QImage("../../../../Projet_IN505/images/rocher.png"));
             }
         }
     }
@@ -34,8 +38,8 @@ void Fenetre::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Up)      // On verifie la direction
     {
-        if(plateau.setPosJoueur(plateau.getXJoueur(), plateau.getYJoueur()-1)
-                && pixelOrigineY > 0
+        if(plateau.setPosJoueur(plateau.getXJoueur(), plateau.getYJoueur()-1) // On verifie que la case est libre
+                && pixelOrigineY > 0                                          // Et que le joueur n'est pas au bord
                 && (plateau.getYJoueur()-pixelOrigineY)*COTE_PIX < 2*COTE_PIX)
         {
             pixelOrigineY--;

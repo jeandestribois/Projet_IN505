@@ -1,21 +1,33 @@
 #include "plateau.h"
 
-Plateau::Plateau()
+Plateau::Plateau()      // Positionnement aleatoire des éléments du plateau
 {
     largeur = LARGEUR_PLA;
     hauteur = HAUTEUR_PLA;
 
-    for(int i=0; i<LARGEUR_PLA; i++)
+    srand(time(NULL));
+    int nbreAlea;
+
+    for(int i=1; i<LARGEUR_PLA; i++)
     {
         for(int j=0; j<HAUTEUR_PLA; j++)
         {
-            if(i%2==0 && j%2==0) tabPixel[i][j].getElement()->setType(_ARBRE);
+            nbreAlea=rand()%7;
+            if(nbreAlea==0) tabPixel[i][j].getElement()->setType(_ARBRE);
+            else if(nbreAlea==1) tabPixel[i][j].getElement()->setType(_ROCHER);
             else tabPixel[i][j].getElement()->setType(_LIBRE);
         }
     }
-
-    xJoueur=2;
-    yJoueur=3;
+    xJoueur=0;
+    yJoueur=2;
+    tabPixel[xJoueur][yJoueur].getElement()->setType(_JOUEUR);
+    xJoueur=rand()%LARGEUR_PLA;
+    yJoueur=rand()%HAUTEUR_PLA;
+    while(tabPixel[xJoueur][yJoueur].getElement()->getType() != _LIBRE)
+    {
+        xJoueur=rand()%LARGEUR_PLA;
+        yJoueur=rand()%HAUTEUR_PLA;
+    }
     tabPixel[xJoueur][yJoueur].getElement()->setType(_JOUEUR);
 }
 

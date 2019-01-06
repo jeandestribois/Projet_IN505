@@ -4,8 +4,8 @@
 #define LARGEUR_FEN 400
 #define HAUTEUR_FEN 400
 
-#define LARGEUR_PLA 10
-#define HAUTEUR_PLA 10
+#define LARGEUR_PLA 30
+#define HAUTEUR_PLA 30
 
 #define COTE_PIX 60
 
