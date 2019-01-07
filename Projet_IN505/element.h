@@ -9,11 +9,14 @@ class Element : QObject
 {
 protected:
     type_element type;
+   int pointVie;
 
 
 public:
     Element();
     Element(type_element t);
+
+    virtual int getPointVie();
 
     virtual type_element getType();
     virtual void setType(type_element t);
